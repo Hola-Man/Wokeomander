@@ -1,1 +1,4 @@
 *.dck
+
+# IDE-generated files
+.idea
