@@ -1,4 +1,7 @@
+# Common deck file formats
+*.dec
 *.dck
+*.txt
 
 # IDE-generated files
 .idea
