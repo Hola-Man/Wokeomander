@@ -15,6 +15,7 @@ def checkCards(cardsURL, length, against, ending_message="!"):
 
     return
 
+
 def get_deck(name):
     names = []
     with open(name) as file:
@@ -27,30 +28,31 @@ def get_deck(name):
         mander = ln[ln.find("] ") + 2:]
     return names, mander
 
+
 banned_searches = [
-    ("f:commander -t:land -otag:mana-rock id=w", 60),
-    ("f:commander -t:land -otag:mana-rock id=u", 60),
-    ("f:commander -t:land -otag:mana-rock id=b", 60),
-    ("f:commander -t:land -otag:mana-rock id=r", 60),
-    ("f:commander -t:land -otag:mana-rock id=g", 60),
-    ("f:commander -t:land -otag:mana-rock id=wu", 30),
-    ("f:commander -t:land -otag:mana-rock id=wb", 30),
-    ("f:commander -t:land -otag:mana-rock id=wr", 30),
-    ("f:commander -t:land -otag:mana-rock id=wg", 30),
-    ("f:commander -t:land -otag:mana-rock id=ub", 30),
-    ("f:commander -t:land -otag:mana-rock id=ur", 30),
-    ("f:commander -t:land -otag:mana-rock id=ug", 30),
-    ("f:commander -t:land -otag:mana-rock id=br", 30),
-    ("f:commander -t:land -otag:mana-rock id=bg", 30),
-    ("f:commander -t:land -otag:mana-rock id=rg", 30),
-    ("f:commander -t:land id=c", 120),
-    ("f:commander t:land id=c", 60)
+    ("f:edh id=w", 60),
+    ("f:edh id=u", 60),
+    ("f:edh id=b", 60),
+    ("f:edh id=r", 60),
+    ("f:edh id=g", 60),
+    ("f:edh -t:land -otag:mana-rock id=c", 120),
+    ("f:edh -t:land -otag:mana-rock id=wu", 12),
+    ("f:edh -t:land -otag:mana-rock id=wb", 12),
+    ("f:edh -t:land -otag:mana-rock id=wr", 12),
+    ("f:edh -t:land -otag:mana-rock id=wg", 12),
+    ("f:edh -t:land -otag:mana-rock id=ub", 12),
+    ("f:edh -t:land -otag:mana-rock id=ur", 12),
+    ("f:edh -t:land -otag:mana-rock id=ug", 12),
+    ("f:edh -t:land -otag:mana-rock id=br", 12),
+    ("f:edh -t:land -otag:mana-rock id=bg", 12),
+    ("f:edh -t:land -otag:mana-rock id=rg", 12),
+    ("f:edh t:land id=c", 60)
 ]
 
 banned_searches_mander = [
-    ("f:commander is:commander id=3", 60),
-    ("f:commander is:commander id=4", 99999),
-    ("f:commander is:commander id=5", 30)
+    ("f:edh is:commander id=3", 60),
+    ("f:edh is:commander id=4", 999),
+    ("f:edh is:commander id=5", 30)
 ]
 
 static_banlist = ["Sol Ring",
@@ -63,7 +65,6 @@ static_mander_banlist = ["Go-Shintai of Life's Origin",
                          "Voja, Jaws of the Conclave",
                          "Kenrith, the Returned King"
                          ]
-
 
 
 deck_cards, deck_mander = get_deck(input("file name??") + ".dck")
@@ -89,4 +90,4 @@ for card in static_mander_banlist:
         print("nuh uh! card " + card['name'] + " not legal in this format as your commander! Blame Logan!!!")
 
 
-input("Press enter to exit...") # ironic, isn't it
+input("Press enter to exit...")  # ironic, isn't it
